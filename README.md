@@ -1,5 +1,5 @@
-## some-random-api-tester
-Small App To Test Some Random API
+## data-importer
+Small App To Import Stuff Into the API
 
 ### Change or develop
 
@@ -7,6 +7,7 @@ Small App To Test Some Random API
 
 ````
 npm install
+typings install
 ````
 
 #####Run dev server
@@ -16,13 +17,3 @@ npm run dev
 ```
 
 Browse at 127.0.0.1:8080 for dev envrionment.
-
-#####Build prodcution
-
-````
-npm run build
-```
-
-Open index.html for bundled version.
-
-`config.js` holds some settings to change...
