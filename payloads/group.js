@@ -4,7 +4,8 @@ const groupCreater = () => {
     var firstName = faker.name.firstName();
     var lastName = faker.name.lastName();
     var phone = faker.phone.phoneNumber();
-    var email = faker.internet.email()
+    var email = faker.internet.email();
+    
     return {
         "Name": `${firstName} ${lastName}`,
         "Members": [
@@ -126,8 +127,8 @@ const groupCreater = () => {
             ],
             "PrimaryAddress": null
         }
-    }
-}
+    };
+};
 
 export default groupCreater;
 

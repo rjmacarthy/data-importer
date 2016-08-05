@@ -5,6 +5,10 @@ module.exports = {
     devtool: 'source-map',
     entry: './index.js',
     output: { path: __dirname, filename: 'bundle.js' },
+    devServer: {
+        inline:true,
+        port: 1337
+    },
     module: {
         loaders: [{
             test: /.js?$/,
@@ -16,6 +20,6 @@ module.exports = {
         }]
     },
     plugins: [
-        new webpack.optimize.UglifyJsPlugin({ minimize: true })
+        //new webpack.optimize.UglifyJsPlugin({ minimize: false, compress: { warnings: false } })
     ]
 };

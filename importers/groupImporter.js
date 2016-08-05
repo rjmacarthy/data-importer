@@ -17,14 +17,14 @@ export const importGroups = (token, times) => {
     } else {
         logger("No token or times!");
     }
-}
+};
 
 const add = (groups, amount, count, token) => {
     if (count <= amount && groups[count]) {
         request.post(config.addgroup)
             .set('Content-Type', 'application/json')
             .set('Rezi-Api-Version', '1.0')
-            .set('Authorization', token)
+            .set('Authorization', 'Bearer ' + token)
             .send(groupCreater())
             .end((err, {
                 body
@@ -37,7 +37,7 @@ const add = (groups, amount, count, token) => {
         logger(`${amount} groups added!`);
         addSearchingRoles(addedGroups, token);
     }
-}
+};
 
 export const addSearchingRoles = (groupIds, token) => {
     groupIds = groupIds ? groupIds : config.groupIds;
@@ -45,12 +45,10 @@ export const addSearchingRoles = (groupIds, token) => {
         request.post(config.addSalesSearch(id))
             .set('Content-Type', 'application/json')
             .set('Rezi-Api-Version', '1.0')
-            .set('Authorization', token)
+            .set('Authorization', 'Bearer ' + token)
             .send(config.groupSearchPayLoad)
-            .end((err, {
-                body
-            }) => {
-                logger('Group Searching roles added!')
+            .end((err, { body }) => {
+                logger('Group Searching roles added!');
             });
-    })
-}
+    });
+};
