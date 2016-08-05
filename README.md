@@ -16,4 +16,4 @@ typings install
 npm run dev
 ```
 
-Browse at 127.0.0.1:8080 for dev envrionment.
+Browse at 127.0.0.1:8080 for dev environment.
