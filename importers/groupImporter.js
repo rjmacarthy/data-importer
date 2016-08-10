@@ -3,6 +3,7 @@ import * as config from '../config';
 import { forEach } from 'lodash';
 import logger from '../helpers/logger';
 import groupCreater from '../payloads/group';
+import setflagsCreater from '../payloads/setflags';
 import $ from 'jquery';
 
 var addedGroups = [];
@@ -31,6 +32,7 @@ const add = (groups, amount, count, token) => {
             }) => {
                 addedGroups.push(body.GroupId);
                 count++;
+                setFlags(token, body.GroupId);
                 add(groups, amount, count, token);
             });
     } else {
@@ -38,6 +40,17 @@ const add = (groups, amount, count, token) => {
         addSearchingRoles(addedGroups, token);
     }
 };
+
+export const setFlags = (token, groupId) => {
+    request.put(config.setflags(groupId))
+        .set('Content-Type', 'application/json')
+        .set('Rezi-Api-Version', '1.0')
+        .set('Authorization', 'Bearer ' + token)
+        .send(setflagsCreater())
+        .end((err, { body }) => {
+            logger('Random group flags set!');
+        });
+}
 
 export const addSearchingRoles = (groupIds, token) => {
     groupIds = groupIds ? groupIds : config.groupIds;
