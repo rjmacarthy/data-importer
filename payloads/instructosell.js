@@ -5,7 +5,7 @@ var instruct = (roleId) => {
         "RoleId": roleId,
         "ActualMarketingPrice": 100000,
         "TeamId": 3,
-        "PutOnMarket": false,
+        "PutOnMarket": true,
         "InstructedDateTime": "2016-08-08T11:25:55+0100",
         "NegotiatorIds": [
             103
