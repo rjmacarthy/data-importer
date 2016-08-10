@@ -9,6 +9,7 @@ const propertyCreater = () => {
     var street = faker.address.streetName();
     var streetNumber = faker.random.number();
     var town = faker.address.county();
+    var county = faker.address.county();
 
     return {
         "Property": {
@@ -41,8 +42,8 @@ const propertyCreater = () => {
                 "BuildingName": "",
                 "Street": street,
                 "Town": town,
-                "Locality": state,
-                "County": locality,
+                "Locality": locality,
+                "County": county,
                 "Postcode": postcode,
                 "Location": {
                     "Id": 0,

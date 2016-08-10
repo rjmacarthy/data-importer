@@ -11,11 +11,7 @@ import request from 'superagent';
 var allGroups;
 
 export const importProperties = (token, times) => {
-
-
-
     if (token && times) {
-
         request.get(config.getallgroups)
             .set('Content-Type', 'application/json')
             .set('Rezi-Api-Version', '1.0')
