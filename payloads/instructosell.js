@@ -1,4 +1,5 @@
 //https://localapi.dezrez.com/api/progression/sales/instructtosell
+var faker = require('faker/locale/en_GB');
 
 var instruct = (roleId) => {
     var price = faker.finance.amount(100000, 7000000, 0);
