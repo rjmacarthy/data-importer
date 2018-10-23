@@ -38,8 +38,7 @@ const groupCreater = () => {
                                 "SystemName": "Mobile"
                             },
                             "Value": phone,
-                            "ContactOrder": 0,
-                            "AllowContact": true
+                            "ContactOrder": 0
                         },
                         {
                             "Type": {
@@ -105,8 +104,7 @@ const groupCreater = () => {
                         "SystemName": "Mobile"
                     },
                     "Value": phone,
-                    "ContactOrder": 0,
-                    "AllowContact": true
+                    "ContactOrder": 0
                 },
                 {
                     "Type": {
