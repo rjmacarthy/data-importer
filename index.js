@@ -15,3 +15,8 @@ $('#addProperties').on('click', () => {
     var validToken = document.querySelector('#token').value;
     propertyImporter.importProperties(validToken, groupTimes);
 });
+
+$('#setFlags').on('click', () => {
+    var validToken = document.querySelector('#token').value;
+    groupImporter.setFlagsExistingGroups(validToken);
+});

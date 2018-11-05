@@ -65,3 +65,22 @@ export const addSearchingRoles = (groupIds, token) => {
             });
     });
 };
+
+export const setFlagsExistingGroups = (token) => {
+    request.get(config.getallgroups)
+    .set('Content-Type', 'application/json')
+    .set('Rezi-Api-Version', '1.0')
+    .set('Authorization', 'Bearer ' + token).end((err, { body }) => {
+        body.Collection.forEach((group) => {
+            request.put(config.setflags(group.Id))
+                .set('Content-Type', 'application/json')
+                .set('Rezi-Api-Version', '1.0')
+                .set('Authorization', 'Bearer ' + token)
+                .send(setflagsCreater())
+                .end((err, { body }) => {
+                    logger('Random group flags set!');
+                });
+        })
+    });
+
+}
